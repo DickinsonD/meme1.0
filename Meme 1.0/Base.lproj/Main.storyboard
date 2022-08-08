@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-IR-LbE">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Lmq-fn-0lQ"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNu-a8-CGh">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19K-gb-zWe">
+                                <rect key="frame" x="15" y="703" width="360" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-65-q80">
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="foI-YC-Cwd"/>
+                                    <barButtonItem image="camera" catalog="system" id="7fO-ak-jaC" userLabel="Camera">
+                                        <connections>
+                                            <action selector="PickImageCamera:" destination="BYZ-38-t0r" id="zYR-he-w71"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="arN-Lv-kWs"/>
+                                    <barButtonItem title="ALBUM" id="6BF-zZ-zcY">
+                                        <connections>
+                                            <action selector="PickImageAlbum:" destination="BYZ-38-t0r" id="ypn-Vm-Iy0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5O2-kM-0dT"/>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDE-s2-HDm" userLabel="TopTextField">
+                                <rect key="frame" x="15" y="108" width="360" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fsu-65-q80" secondAttribute="trailing" id="0Be-U4-mSM"/>
+                            <constraint firstItem="uCX-IR-LbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Dg-rk-nKc"/>
+                            <constraint firstItem="GNu-a8-CGh" firstAttribute="top" secondItem="uCX-IR-LbE" secondAttribute="bottom" id="DhV-df-cs8"/>
+                            <constraint firstItem="fsu-65-q80" firstAttribute="top" secondItem="19K-gb-zWe" secondAttribute="bottom" constant="20" id="IPs-Cy-aCd"/>
+                            <constraint firstItem="GNu-a8-CGh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lbw-VF-LJi"/>
+                            <constraint firstItem="fsu-65-q80" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OAa-rt-nHQ"/>
+                            <constraint firstItem="19K-gb-zWe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Ogw-3z-yGG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="19K-gb-zWe" secondAttribute="trailing" constant="15" id="U3W-iO-nHc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fsu-65-q80" secondAttribute="bottom" id="Xx7-3C-TS1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uCX-IR-LbE" secondAttribute="trailing" id="ZKE-XU-sfx"/>
+                            <constraint firstItem="fsu-65-q80" firstAttribute="top" secondItem="GNu-a8-CGh" secondAttribute="bottom" id="aTl-3F-oON"/>
+                            <constraint firstItem="GNu-a8-CGh" firstAttribute="top" secondItem="uCX-IR-LbE" secondAttribute="bottom" id="bQf-tG-kKW"/>
+                            <constraint firstItem="uCX-IR-LbE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eG4-ac-eH9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KDE-s2-HDm" secondAttribute="trailing" constant="15" id="h6t-hb-GzX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GNu-a8-CGh" secondAttribute="trailing" id="moA-xi-VVW"/>
+                            <constraint firstItem="KDE-s2-HDm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ohQ-kc-5sU"/>
+                            <constraint firstItem="KDE-s2-HDm" firstAttribute="top" secondItem="uCX-IR-LbE" secondAttribute="bottom" constant="20" id="rFV-Zd-ntJ"/>
+                            <constraint firstItem="fsu-65-q80" firstAttribute="top" secondItem="GNu-a8-CGh" secondAttribute="bottom" id="vGi-7y-Ntn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BottomTextField" destination="19K-gb-zWe" id="snz-4y-lPL"/>
+                        <outlet property="ImagePickerView" destination="GNu-a8-CGh" id="8Sf-Z9-d67"/>
+                        <outlet property="TopTextField" destination="KDE-s2-HDm" id="KuU-fn-UoC"/>
+                        <outlet property="cameraButton" destination="7fO-ak-jaC" id="Gfd-sd-g3L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="137.91469194312796"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

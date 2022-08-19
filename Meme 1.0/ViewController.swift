@@ -38,7 +38,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromkeyboardNotifications()
     }
     
-    
     //MARK: Text Attributes
     //Text formatting, All caps set in settings
     let memeTextAttributes: [NSAttributedString.Key : Any] = [
@@ -70,12 +69,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 BottomTextField.text = " "
             }
         }
+    
     //When return is pressed, keyboard will disapear
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
     
     //MARK: Keyboard shift
     func getkeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -106,8 +105,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func unsubscribeFromkeyboardNotifications(){
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
-
-
     
     //MARK: Meme Creation
     //Defines Meme object
@@ -141,10 +138,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage = generateMemedImage()
         //create the meme
         _ = Meme(topText: TopTextField.text!, bottomText: BottomTextField.text!, originalImage: ImagePickerView.image!, memedImage: memedImage)
-        
     }
    
-    
     //MARK: imagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage
@@ -155,7 +150,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
 
-    
     //MARK: Actions
     @IBAction func PickImageAlbum(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -188,7 +182,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textFieldProperites()
         self.ImagePickerView.image = nil
         }
-    
     
     // Change font, have to push cancel instead of return to execute font
     @IBAction func fontPicker(_ sender: Any) {

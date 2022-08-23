@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate{
-   
+    
     //MARK: Outlets
     @IBOutlet weak var ImagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -19,11 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
-    
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldProperites()
+        setupTextField(textField: TopTextField, text: "TOP")
+        setupTextField(textField: BottomTextField, text: "BOTTOM")
         shareButton.isEnabled = false
     }
     
@@ -47,28 +47,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeWidth: -3.0
     ]
     
-    //Top and Bottom text box with placeholders and assigns attributes
-    func textFieldProperites(){
-        TopTextField.text = "TOP"
-        TopTextField.delegate = self
-        TopTextField.defaultTextAttributes = memeTextAttributes
-        TopTextField.textAlignment = .center
-        
-        BottomTextField.text = "BOTTOM"
-        BottomTextField.delegate = self
-        BottomTextField.defaultTextAttributes = memeTextAttributes
-        BottomTextField.textAlignment = .center
+    //Text Field parameters for UITextField inputs
+    func setupTextField(textField: UITextField, text: String) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
+        textField.text = text
     }
     
     //When text box is clicked, placehoulder disapears
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            if textField == TopTextField && TopTextField.text == "TOP"{
-                TopTextField.text = " "
-            }
-            if textField == BottomTextField && BottomTextField.text == "BOTTOM"{
-                BottomTextField.text = " "
-            }
+        if textField == TopTextField && TopTextField.text == "TOP"{
+            TopTextField.text = " "
         }
+        if textField == BottomTextField && BottomTextField.text == "BOTTOM"{
+            BottomTextField.text = " "
+        }
+    }
     
     //When return is pressed, keyboard will disapear
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -92,7 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //When return is pressed, keyboard will hide and imageView will return using notifications
     @objc func keyboardWillHide(_ notification:Notification){
-            view.frame.origin.y = 0
+        view.frame.origin.y = 0
     }
     
     //Subscrition set in viewWillAppear
@@ -129,17 +124,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //show toolbar
         self.navigationBar.isHidden = false
         self.toolBar.isHidden = false
-       
+        
         return memedImage
     }
-
+    
     func save() {
         //generate the meme
         let memedImage = generateMemedImage()
         //create the meme
         _ = Meme(topText: TopTextField.text!, bottomText: BottomTextField.text!, originalImage: ImagePickerView.image!, memedImage: memedImage)
     }
-   
+    
     //MARK: imagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage
@@ -147,41 +142,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ImagePickerView.image = image
             dismiss(animated: true, completion: nil)
             shareButton.isEnabled = true
-            }
         }
-
-    //MARK: Actions
-    @IBAction func PickImageAlbum(_ sender: Any) {
+    }
+    
+    //pickImage func to reduce Album/Camera redundency
+    func pickImage(source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
+        
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func PickImageCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .camera
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+    //MARK: Actions
+    @IBAction func PickImageAlbum(_ sender: Any) {
+        pickImage(source: .photoLibrary)
     }
-
+    
+    @IBAction func PickImageCamera(_ sender: Any) {
+        pickImage(source: .camera)
+    }
+    
     @IBAction func shareItem(_ sender: Any) {
         let memedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         controller.completionWithItemsHandler = {activity, completed, items, error in
             self.save()
             self.dismiss(animated: true, completion: nil)
-            }
+        }
         present(controller, animated: true, completion: nil)
-        
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        textFieldProperites()
+        TopTextField.text = "TOP"
+        BottomTextField.text = "BOTTOM"
         self.ImagePickerView.image = nil
-        }
+    }
     
     // Change font, have to push cancel instead of return to execute font
     @IBAction func fontPicker(_ sender: Any) {
@@ -204,5 +200,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         BottomTextField.font = UIFont(
             descriptor: descripter,
             size: 40)
-        }
     }
+}

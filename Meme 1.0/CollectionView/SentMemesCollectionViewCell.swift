@@ -9,4 +9,9 @@ import UIKit
 
 class SentMemesCollectionViewCell: UICollectionViewCell {
     
+    
+    
+    @IBOutlet weak var memeImageView: UIImageView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
 }

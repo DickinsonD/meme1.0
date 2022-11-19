@@ -16,6 +16,8 @@
 		65B6CC862927E02900E6CAA2 /* SentMemesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6CC852927E02900E6CAA2 /* SentMemesCollectionViewCell.swift */; };
 		65B6CC882927E04000E6CAA2 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6CC872927E04000E6CAA2 /* SentMemesCollectionViewController.swift */; };
 		65B6CC8A2927E1D700E6CAA2 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6CC892927E1D700E6CAA2 /* MemeModel.swift */; };
+		65B6CC8C2928031300E6CAA2 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6CC8B2928031300E6CAA2 /* SentMemesTableViewController.swift */; };
+		65B6CC9029281F0600E6CAA2 /* SentMemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6CC8F29281F0600E6CAA2 /* SentMemesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		65B6CC852927E02900E6CAA2 /* SentMemesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewCell.swift; sourceTree = "<group>"; };
 		65B6CC872927E04000E6CAA2 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		65B6CC892927E1D700E6CAA2 /* MemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeModel.swift; sourceTree = "<group>"; };
+		65B6CC8B2928031300E6CAA2 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
+		65B6CC8F29281F0600E6CAA2 /* SentMemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 		65B6CC842927DFB100E6CAA2 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				65B6CC8B2928031300E6CAA2 /* SentMemesTableViewController.swift */,
+				65B6CC8F29281F0600E6CAA2 /* SentMemesTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B6CC862927E02900E6CAA2 /* SentMemesCollectionViewCell.swift in Sources */,
+				65B6CC8C2928031300E6CAA2 /* SentMemesTableViewController.swift in Sources */,
 				65B6CC8A2927E1D700E6CAA2 /* MemeModel.swift in Sources */,
+				65B6CC9029281F0600E6CAA2 /* SentMemesTableViewCell.swift in Sources */,
 				65A26FC1289FF8AE0092AE44 /* ViewController.swift in Sources */,
 				65B6CC882927E04000E6CAA2 /* SentMemesCollectionViewController.swift in Sources */,
 				65A26FBD289FF8AE0092AE44 /* AppDelegate.swift in Sources */,

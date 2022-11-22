@@ -12,20 +12,17 @@ class SentMemesTableViewController: UITableViewController {
     
     @IBOutlet var memeTableView: UITableView!
     
-    
     //AppDelegate shared model
-    var memes: [Meme]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.memes
-    }
-    
+    var memes: [Meme] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        memes = appDelegate.memes
         tableView.reloadData()
     }
     
@@ -52,5 +49,19 @@ class SentMemesTableViewController: UITableViewController {
     
         self.navigationController!.pushViewController(detailController, animated: true)
     }
+    // swipe to detete row action
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            memes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            appDelegate.memes.remove(at: indexPath.row)
+        }
+            
+    }
+    
+    
     
 }

@@ -15,11 +15,8 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     //AppDelegate shared model
-    var memes: [Meme]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.memes
-    }
+    var memes: [Meme] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +33,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        memes = appDelegate.memes
         collectionView!.reloadData()
     }
     

@@ -13,6 +13,7 @@
         <scene sceneID="WVm-MT-bWz">
             <objects>
                 <tabBarController id="x1b-Mn-Qbd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QKy-un-bmf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L1n-qa-Bbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,7 +130,7 @@
                 <navigationController id="mOq-Cr-p0l" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="square.grid.3x2.fill" catalog="system" id="yLz-HQ-xsE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8mW-BS-2ZL">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -145,7 +146,7 @@
             <objects>
                 <collectionViewController id="DdR-Fz-9SW" customClass="SentMemesCollectionViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tkd-cK-FuY">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MTV-Gy-8Lm">
@@ -203,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36d-cU-c5f">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U17-f2-3JR"/>
@@ -215,6 +216,8 @@
                             <constraint firstItem="36d-cU-c5f" firstAttribute="top" secondItem="U17-f2-3JR" secondAttribute="top" id="pbR-Cn-d59"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailViewImage" destination="36d-cU-c5f" id="0BH-wS-ba2"/>
                     </connections>
@@ -253,6 +256,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="m4H-Lc-re8" userLabel="Cancel">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" id="iT8-Gr-fgw"/>
+                                                <segue destination="x1b-Mn-Qbd" kind="show" id="kU7-ji-1sx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

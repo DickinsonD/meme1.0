@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 
+//public struct for shared model
 struct Meme {
     var topText: String
     var bottomText: String

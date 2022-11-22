@@ -70,12 +70,11 @@
 			children = (
 				65A26FBC289FF8AE0092AE44 /* AppDelegate.swift */,
 				65A26FBE289FF8AE0092AE44 /* SceneDelegate.swift */,
-				65B6CC91292BD67D00E6CAA2 /* DetailViewController.swift */,
 				65B6CC842927DFB100E6CAA2 /* TableView */,
+				65B6CC93292D27F600E6CAA2 /* ViewController */,
 				65B6CC832927DF9E00E6CAA2 /* CollectionView */,
-				65A26FC2289FF8AE0092AE44 /* Main.storyboard */,
-				65A26FC0289FF8AE0092AE44 /* ViewController.swift */,
 				65B6CC892927E1D700E6CAA2 /* MemeModel.swift */,
+				65A26FC2289FF8AE0092AE44 /* Main.storyboard */,
 				65A26FC5289FF8B00092AE44 /* Assets.xcassets */,
 				65A26FC7289FF8B00092AE44 /* LaunchScreen.storyboard */,
 				65A26FCA289FF8B00092AE44 /* Info.plist */,
@@ -99,6 +98,15 @@
 				65B6CC8F29281F0600E6CAA2 /* SentMemesTableViewCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		65B6CC93292D27F600E6CAA2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65B6CC91292BD67D00E6CAA2 /* DetailViewController.swift */,
+				65A26FC0289FF8AE0092AE44 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

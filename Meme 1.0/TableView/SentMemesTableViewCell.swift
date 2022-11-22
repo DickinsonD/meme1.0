@@ -8,8 +8,6 @@
 import UIKit
 
 class SentMemesTableViewCell: UITableViewCell {
-
- 
+    //Prototype cell imageView
     @IBOutlet weak var tableImageView: UIImageView!
-    
 }

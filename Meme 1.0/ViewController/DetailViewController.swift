@@ -20,9 +20,4 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         self.detailViewImage.image = memes.memedImage
     }
-    
-   
-    
-    
-    
 }

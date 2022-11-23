@@ -30,9 +30,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        //disable camera button during simulation
+        #if targetEnvironment(simulator)
+            cameraButton.isEnabled = false
+        #else
+            cameraButton.isEnabled = true
+        #endif
+    
         subscribeToKeyboardNotifications()
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromkeyboardNotifications()
@@ -165,7 +171,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareItem(_ sender: Any) {
         let memedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        controller.completionWithItemsHandler = {activity, completed, items, error in
+        //removed activity and item params since they are not being used and declared with _.
+        controller.completionWithItemsHandler = {_, completed, _, _ in
             self.save()
             self.dismiss(animated: true, completion: nil)
         }
